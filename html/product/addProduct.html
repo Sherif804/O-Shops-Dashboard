@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximuim-scale=1.0">
+    <title>OShops admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/main.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+
+
+    <style>
+        /* The switch - the box around the slider */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #17a2b8;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #17a2b8;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><i class="fab fa-shopify"></i> <span>OShops</span></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="../html/home.html"><i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li id="permission">
+                </li>
+                <li>
+                    <a href="../stores/addStore.html" class=""><i class="fas fa-store"></i>
+                        <span>Stores</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../category/addCategory.html" class=""><i class="fas fa-list"></i>
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../product/addProduct.html" class="active"><i class="fab fa-product-hunt"></i>
+                        <span>Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../user/veiwUser.html"><i class="fas fa-users"></i>
+                        <span>Uers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../advertisment/addAdvertisment.html"><i class="fas fa-ad"></i>
+                        <span>Advertisment</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </label>
+                Dashboard
+            </h2>
+
+            <div class="user-wrapper">
+                <img src="../../images/user.png" width="40px" height="40px" alt="user profile image">
+                <div id="getCurrentAdmin">
+
+                </div>
+                <i class="fas fa-sign-out-alt" onclick="logOut()"></i>
+            </div>
+        </header>
+
+        <main>
+            <div>
+                <div id='msg'>
+
+                </div>
+                <div class="mb-4 d-flex justify-content-between">
+                    <div>
+                        <h2>Add Product</h2>
+                    </div>
+                    <div>
+                        <a href="../product/veiwProduct.html">View all Products</a>
+                    </div>
+                </div>
+
+                <div id="productForm" class="ml-3">
+                    <div class="mb-3 row">
+                        <label for="productName" class="col-sm-2 col-form-label">Product name</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="productName" class="form-control" id="productName">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="productPrice" class="col-sm-2 col-form-label">Product price</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="productPrice" class="form-control" id="productPrice">
+                        </div>
+                    </div>
+
+
+
+                    <div class="mb-3 row">
+                        <label for="productRate" class="col-sm-2 col-form-label">Product Rate</label>
+                        <div class="col-sm-10">
+                            <select class="custom-select" id="productRate">
+                                <option value="" disabled selected>Choose rate...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3 row">
+                        <label for="productStore" class="col-sm-2 col-form-label">Store</label>
+                        <div class="col-sm-10">
+                            <select class="custom-select" id="productStore">
+                                
+            
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3 row">
+                        <label for="productCategory" class="col-sm-2 col-form-label">Product Category</label>
+                        <div class="col-sm-10">
+                            <select class="custom-select" id="productCategory">
+                                
+                                
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 mt-5 row">
+                        <label for="productImage" class="col-sm-2 col-form-label">Product in Stock</label>
+                        <label class="switch form-group">
+                            <input id="inStock" type="checkbox" class="form-control">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+
+
+                    <div class="mb-5 row">
+                        <label for="productImage" class="col-sm-2 col-form-label">Top Product</label>
+                        <label class="switch form-group">
+                            <input id="topProduct" type="checkbox" class="form-control">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+
+
+
+
+                    <div class="mb-3 row">
+                        <label for="productImageURL" class="col-sm-2 col-form-label">Product image</label>
+                        <div class="form-group col-sm-2">
+                            <input type="file" class="form-control-file" id="productImageURL">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="admin-btn my-5 d-flex justify-content-end">
+                        <div>
+                            <button class="btn btn-info px-4" id="saveBtn" type="submit"><i class="fas fa-plus"></i> ADD PRODUCT</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </main>
+    </div>
+    <script src="../../js/product/addProduct.js"></script>
+</body>
+
+</html>

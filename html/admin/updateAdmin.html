@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximuim-scale=1.0">
+    <title>OShops admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><i class="fab fa-shopify"></i> <span>OShops</span></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="../home.html"><i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li id="permission">
+                </li>
+                <li>
+                    <a href="../stores/addStore.html"><i class="fas fa-store"></i>
+                        <span>Stores</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../category/addCategory.html"><i class="fas fa-list"></i>
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../product/addProduct.html"><i class="fab fa-product-hunt"></i>
+                        <span>Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../user/veiwUser.html"><i class="fas fa-users"></i>
+                        <span>Uers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../advertisment/addAdvertisment.html" ><i class="fas fa-ad"></i>
+                        <span>Advertisment</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </label>
+                Dashboard
+            </h2>
+
+            <div class="user-wrapper">
+                <img src="../../images/user.png" width="40px" height="40px" alt="user profile image">
+                <div id="getCurrentAdmin">
+
+                </div>
+                <i class="fas fa-sign-out-alt" onclick="logOut()"></i>
+            </div>
+        </header>
+        <main>
+            <div>
+                <div id='msg'>
+
+                </div>
+                <div class="mb-4 d-flex justify-content-between">
+                    <div>
+                       <h2>Update admin</h2>
+                    </div>
+                    <div>
+                        <a href="../../html/admin/viewAdmin.html">View all admins</a>
+                    </div>
+                </div>
+                <div action="POST" class="ml-3">
+                    <div class="mb-3 row">
+                        <label for="firstName" class="col-sm-2 col-form-label">First name</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="firstName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="lastName" class="col-sm-2 col-form-label">Last name</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="lastName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="username" class="col-sm-2 col-form-label">Username</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="userName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="password" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                        <input type="password" id="password" class="form-control" id="password">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="role" class="col-sm-2 col-form-label">Role</label>
+                        <div class="col-sm-10">
+                            <select class="custom-select" id="role">
+                                <option value="" disabled selected>Choose...</option>
+                                <option value="admin">Admin</option>
+                                <option value="superAdmin">Super admin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="admin-btn my-5 d-flex justify-content-end">
+                        <div>
+                            <button class="btn btn-info px-4" id="updateBtn" type="submit">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../../js/admin/updateAdmin.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximuim-scale=1.0">
+    <title>OShops admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/main.css">
+
+</head>
+
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><i class="fab fa-shopify"></i> <span>OShops</span></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="../html/home.html"><i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li id="permission">
+                </li>
+                <li>
+                    <a href="../../html/stores/addStore.html" class="active"><i class="fas fa-store" ></i>
+                        <span>Stores</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../html/category/addCategory.html" class=""><i class="fas fa-list"></i>
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../html/product/addProduct.html"><i class="fab fa-product-hunt"></i>
+                        <span>Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../html/user/veiwUser.html"><i class="fas fa-users"></i>
+                        <span>Uers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../html/advertisment/addAdvertisment.html"><i class="fas fa-ad"></i>
+                        <span>Advertisment</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </label>
+                Dashboard
+            </h2>
+
+            <div class="user-wrapper">
+                <img src="../../images/user.png" width="40px" height="40px" alt="user profile image">
+                <div id="getCurrentAdmin">
+
+                </div>
+                <i class="fas fa-sign-out-alt" onclick="logOut()"></i>
+            </div>
+        </header>
+
+        <main>
+            <div>
+                <div id='msg'>
+
+                </div>
+                <div class="mb-4 d-flex justify-content-between">
+                    <div>
+                        <h2>Add store</h2>
+                    </div>
+                    <div>
+                        <a href="../stores/viewStore.html">View all stores</a>
+                    </div>
+                </div>
+
+                <div id="categoryForm" class="ml-3">
+                    <div class="mb-3 row">
+                        <label for="storeName" class="col-sm-2 col-form-label">Store name</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="storeName" class="form-control" id="storeName">
+                        </div>
+                    </div>
+
+                    <div id="telephoneNumbersInputs" class="mt-5">
+                        <div class="mb-3 row">
+                            <label for="telephoneNumber" class="col-sm-2 col-form-label">Store telephone number</label>
+                            <div class="form-group col-sm-8">
+                                <input class="form-control" type="tel" id="telephoneNumber" name="telephoneNumber">
+                            </div>
+                            
+                            <div class="form-group col-sm-2">
+                                <button type="button" class="btn btn-success" onclick="addNewPhoneNumberInput()" id="addNewNumBtn">Add number</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center">
+                        <ul class="list-group col-6" id="viewAddedPhoneNumbers">
+                        </ul>
+                    </div>
+                    
+
+                    <div class="mb-3 row mt-5">
+                        <label for="storeWebsite" class="col-sm-2 col-form-label">Store website</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="website" class="form-control" id="storeWebsite">
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3 row">
+                        <label for="categoryList" class="col-sm-2 col-form-label">Store categories</label>
+                        <div class="col-sm-10" id="categoryList">
+                            
+                        </div>
+                    </div>
+
+            
+
+
+                    <div class="mb-3 row">
+                        <label for="storeImage" class="col-sm-2 col-form-label">Store image</label>
+                        <div class="form-group col-sm-2">
+                            <input type="file" class="form-control-file" id="storeImage">
+                        </div>
+                    </div>
+
+                    
+
+
+                    <div class="admin-btn my-5 d-flex justify-content-end">
+                        <div>
+                            <button class="btn btn-info px-4" id="saveBtn" type="submit"><i class="fas fa-plus"></i> ADD STORE</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </main>
+    </div>
+    <script src="../../js/store/addStore.js"></script>
+</body>
+
+</html>

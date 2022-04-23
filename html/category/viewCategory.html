@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximuim-scale=1.0">
+    <title>OShops admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><i class="fab fa-shopify"></i> <span>OShops</span></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="../home.html"><i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li id="permission">
+                </li>
+                <li>
+                    <a href="../stores/addStore.html"><i class="fas fa-store"></i>
+                        <span>Stores</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../category/addCategory.html" class="active"><i class="fas fa-list"></i>
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../product/addProduct.html"><i class="fab fa-product-hunt"></i>
+                        <span>Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../user/veiwUser.html"><i class="fas fa-users"></i>
+                        <span>Uers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../advertisment/addAdvertisment.html"><i class="fas fa-ad"></i>
+                        <span>Advertisment</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </label>
+                Dashboard
+            </h2>
+
+            <div class="user-wrapper">
+                <img src="../../images/user.png" width="40px" height="40px" alt="user profile image">
+                <div id="getCurrentAdmin">
+                </div>
+                <i class="fas fa-sign-out-alt" onclick="logOut()"></i>
+            </div>
+        </header>
+        <main>
+            <div>
+                <div id='msg'>
+                </div>
+                <div class="mb-4">
+                    <div>
+                        <h2>All categories</h2>
+                    </div>
+                </div>
+                <div>
+                    <table class="table text-center">
+                        <thead>
+                            <th>Index</th>
+                            <th>Category Name</th>
+                            <th>Logo</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </thead>
+                        <tbody id="categoryTable">
+                            
+                        </tbody>
+                    </table>
+                    <div class="text-center d-flex justify-content-center">
+                        <div aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" onclick="previousPaginate()" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <div id="totalPages" class="d-flex">
+
+                                </div>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" onclick="nextPaginate()" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div id="info">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../../js/category/viewCategory.js"></script>
+</body>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximuim-scale=1.0">
+    <title>OShops admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/main.css">
+
+    <style>
+        /* The switch - the box around the slider */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #17a2b8;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #17a2b8;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><i class="fab fa-shopify"></i> <span>OShops</span></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="../home.html"><i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li id="permission">
+                </li>
+                <li>
+                    <a href="../../html/stores/addStore.html"><i class="fas fa-store"></i>
+                        <span>Stores</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../html/category/addCategory.html"><i class="fas fa-list"></i>
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../html/product/addProduct.html"><i class="fab fa-product-hunt"></i>
+                        <span>Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../html/user/veiwUser.html"><i class="fas fa-users"></i>
+                        <span>Uers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../advertisment/addAdvertisment.html" class="active"><i class="fas fa-ad"></i>
+                        <span>Advertisment</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </label>
+                Dashboard
+            </h2>
+
+            <div class="user-wrapper">
+                <img src="../../images/user.png" width="40px" height="40px" alt="user profile image">
+                <div id="getCurrentAdmin">
+
+                </div>
+                <i class="fas fa-sign-out-alt" onclick="logOut()"></i>
+            </div>
+        </header>
+
+        <main>
+            <div>
+                <div id='msg'>
+
+                </div>
+                <div class="mb-4 d-flex justify-content-between">
+                    <div>
+                        <h2>Add advertisment</h2>
+                    </div>
+                    <div>
+                        <a href="./viewAdvertisment.html">View all advertisments</a>
+                    </div>
+                </div>
+
+                <div id="advertismentForm" class="ml-3">
+                    <div class="mb-3 row">
+                        <label for="title" class="col-sm-2 col-form-label">Title</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="title" class="form-control" id="title">
+                        </div>
+                    </div>
+
+                    <div class="mb-5 row">
+                        <label for="isActive" class="col-sm-2 col-form-label">Is Active</label>
+                        <label class="switch form-group">
+                            <input id="isActive" type="checkbox" class="form-control">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="advertismentImage" class="col-sm-2 col-form-label">Advertisment image</label>
+                        <div class="form-group col-sm-2">
+                            <input type="file" class="form-control-file" id="advertismentImage">
+                        </div>
+                    </div>
+                    
+                    <div class="admin-btn my-5 d-flex justify-content-end">
+                        <div>
+                            <button class="btn btn-info px-4" id="saveBtn" type="submit"><i class="fas fa-plus"></i> ADD
+                                Advertisments</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </main>
+    </div>
+    <script src="../../js/advertisment/addAdvertisment.js"></script>
+</body>
+
+</html>
